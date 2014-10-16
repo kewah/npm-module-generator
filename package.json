@@ -1,0 +1,30 @@
+{
+  "name": "npm-module-generator",
+  "version": "0.0.0",
+  "description": "NPM module generator",
+  "bin": {
+    "npm-module": "bin/generator"
+  },
+  "keywords": [
+    "npm",
+    "module",
+    "generator"
+  ],
+  "license": "MIT",
+  "author": "Antoine Lehurt <code@kewah.com> (http://kewah.com/)",
+  "homepage": "https://github.com/kewah/npm-module-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kewah/npm-module-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/kewah/npm-module-generator/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^0.12.0",
+    "inquirer": "^0.8.0",
+    "npmconf": "^2.1.1",
+    "readdirp": "^1.1.0",
+    "underscore": "^1.7.0"
+  }
+}
