@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "test": "tape test/**.js"
+  },
+  "devDependencies": {
+    "tape": "^3.0.0"
+  },
+  "testling": {
+    "files": "test/**.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/28..latest",
+      "firefox/16..latest",
+      "safari/5.1..latest",
+      "opera/15..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  }
+}

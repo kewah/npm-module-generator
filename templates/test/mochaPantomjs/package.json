@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs ./test/index.html"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.5",
+    "mocha-phantomjs": "^3.5.1",
+    "phantomjs": "^1.9.10"
+  }
+}
