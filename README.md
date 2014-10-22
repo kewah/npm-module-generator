@@ -1,4 +1,4 @@
-# npm-module-generator [![Build Status](https://travis-ci.org/kewah/npm-module-generator.svg?branch=master)](https://travis-ci.org/kewah/npm-module-generator)
+# npm-module-generator
 
 NPM module generator.  
 Inspired by Yeoman.
@@ -28,10 +28,6 @@ To generate the module skeleton:
 $ mkdir your-project && cd your-project
 $ npm-module
 ```
-
-## Todo
-
-* Generate test skeleton (tape or mocha)
 
 ## License
 
