@@ -29,7 +29,16 @@ require('./lib/prompt')(function(err, params) {
   });
 
   stream.on('data', function(file) {
-    var dest = path.resolve(process.cwd(), file.path);
+    // Change the dest path for test templates.
+    // From `test/{testlib}/filename.js` to `test/filename.js`.
+    var dest = /test/.test(file.path)
+      ? file.path
+        .split(path.sep)
+        .filter(function(folder) {
+          return folder !== params.testlib;
+        })
+        .join(path.sep)
+      : path.resolve(process.cwd(), file.path);
 
     if (fs.existsSync(dest)) {
       console.warn(file.path, 'already exists');
@@ -46,17 +55,6 @@ require('./lib/prompt')(function(err, params) {
       if (utils.isJsonFile(file)) {
         fs.writeJson(dest, JSON.parse(data));
         return;
-      }
-
-      // Change the dest path for the test templates.
-      // From `test/{testlib}/filename.js` to `test/filename.js`.
-      if (/test/.test(file.path)) {
-        dest = file.path
-          .split(path.sep)
-          .filter(function(folder) {
-            return folder !== params.testlib;
-          })
-          .join(path.sep);
       }
 
       fs.outputFile(dest, data);
