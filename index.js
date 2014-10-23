@@ -4,7 +4,6 @@ var path = require('path');
 var readdirp = require('readdirp');
 var fs = require('fs-extra');
 var _ = require('underscore');
-_.mixin(require('underscore.string').exports());
 var utils = require('./lib/utils');
 
 
@@ -44,7 +43,6 @@ require('./lib/prompt')(function(err, params) {
     }
 
     utils.renderFile(file, params, function(data) {
-      data = _.template(data)(params);
       if (utils.isJsonFile(file)) {
         fs.writeJson(dest, JSON.parse(data));
         return;
