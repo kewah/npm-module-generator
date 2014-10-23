@@ -14,13 +14,13 @@ require('./lib/prompt')(function(err, params) {
   }
 
   var manifests = [];
-  var testLibs = fs.readdirSync(path.join(__dirname, 'templates/test'));
+  var testlibs = fs.readdirSync(path.join(__dirname, 'templates/test'));
 
   var stream = readdirp({
     root: path.join(__dirname, 'templates'),
     fileFilter: ['!.DS_Store'],
     // Exclude test templates that haven't been selected.
-    directoryFilter: testLibs
+    directoryFilter: testlibs
       .filter(function(lib) {
         return lib !== params.testlib;
       })
