@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs ./test/index.html"
+    "test": "mocha-phantomjs ./test/index.html"
   },
   "devDependencies": {
     "mocha": "^1.21.5",

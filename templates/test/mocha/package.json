@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "devDependencies": {
     "mocha": "^1.21.5"
