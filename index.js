@@ -33,11 +33,11 @@ require('./lib/prompt')(function(err, params) {
     // From `test/{testlib}/filename.js` to `test/filename.js`.
     var dest = /test/.test(file.path)
       ? file.path
-        .split(path.sep)
-        .filter(function(folder) {
-          return folder !== params.testlib;
-        })
-        .join(path.sep)
+          .split(path.sep)
+          .filter(function(folder) {
+            return folder !== params.testlib;
+          })
+          .join(path.sep)
       : path.resolve(process.cwd(), file.path);
 
     if (fs.existsSync(dest)) {
