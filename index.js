@@ -8,9 +8,7 @@ var utils = require('./lib/utils');
 
 
 require('./lib/prompt')(function(err, params) {
-  if (err) {
-    throw err;
-  }
+  if (err) throw err;
 
   var manifests = [];
   var testlibs = fs.readdirSync(path.join(__dirname, 'templates/test'));
@@ -29,16 +27,15 @@ require('./lib/prompt')(function(err, params) {
   });
 
   stream.on('data', function(file) {
-    // Change the dest path for test templates.
-    // From `test/{testlib}/filename.js` to `test/filename.js`.
-    var dest = /test/.test(file.path)
-      ? file.path
-          .split(path.sep)
-          .filter(function(folder) {
-            return folder !== params.testlib;
-          })
-          .join(path.sep)
-      : path.resolve(process.cwd(), file.path);
+    var dest;
+
+    if (utils.isTestTemplate(file)) {
+      dest = utils.toTestPath(file, params.testlib);
+    } else if (utils.isDotfileTemplate(file)) {
+      dest = utils.toDotfilePath(file);
+    }
+
+    dest = path.resolve(process.cwd(), dest || file.path);
 
     if (fs.existsSync(dest)) {
       console.warn(file.path, 'already exists');
