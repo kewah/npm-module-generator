@@ -1,4 +1,4 @@
-# npm-module-generator
+# npm-module-generator [![Build Status](https://travis-ci.org/kewah/npm-module-generator.svg)](https://travis-ci.org/kewah/npm-module-generator)
 
 NPM module generator.  
 Inspired by Yeoman.
