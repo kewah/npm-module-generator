@@ -3,6 +3,6 @@
     "test": "mocha --reporter spec"
   },
   "devDependencies": {
-    "mocha": "^1.21.5"
+    "mocha": "^2.0.1"
   }
 }

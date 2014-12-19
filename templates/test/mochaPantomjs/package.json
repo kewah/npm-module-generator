@@ -1,10 +1,8 @@
 {
   "scripts": {
-    "test": "mocha-phantomjs ./test/index.html"
+    "test": "mocha-phantomjs ./test/runner.html"
   },
   "devDependencies": {
-    "mocha": "^1.21.5",
-    "mocha-phantomjs": "^3.5.1",
-    "phantomjs": "^1.9.10"
+    "mocha-phantomjs": "^3.5.1"
   }
 }
