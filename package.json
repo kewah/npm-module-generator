@@ -5,6 +5,9 @@
   "bin": {
     "npm-module": "bin/generator"
   },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
   "keywords": [
     "npm",
     "module",
@@ -27,5 +30,9 @@
     "readdirp": "^1.1.0",
     "underscore": "^1.7.0",
     "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
   }
 }
